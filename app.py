@@ -17,8 +17,8 @@ st.title("Sex Prediction App")
 st.write("This app predicts the sex of an individual based on their height and weight. Please provide the following information:")
 
 # Input fields for height and weight
-height = st.number_input("Height (in cm or as per your model)", min_value=0.0, step=0.1)
-weight = st.number_input("Weight (in kg or as per your model)", min_value=0.0, step=0.1)
+height = st.number_input("Height (in cm)", min_value=25.0, step=0.1)
+weight = st.number_input("Weight (in kg)", min_value=8.0, step=0.1)
 
 # Prediction button
 if st.button("Predict"):
