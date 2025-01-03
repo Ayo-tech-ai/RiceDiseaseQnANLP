@@ -13,8 +13,8 @@ def predict_sex(input_data):
     return label_mapping[prediction]
 
 # Streamlit App
-st.title("Sex Prediction App")
-st.write("This app predicts the sex of an individual based on their height and weight. Please provide the following information:")
+st.title("Gender Prediction App")
+st.write("This app predicts the gender of an individual based on their height and weight. Please provide the following information:")
 
 # Input fields for height and weight
 height = st.number_input("Height (in cm)", min_value=25.0, step=0.1)
@@ -25,4 +25,4 @@ if st.button("Predict"):
     # Prepare input data
     input_data = [height, weight]
     result = predict_sex(input_data)
-    st.success(f"The predicted sex is: {result}")
+    st.success(f"The predicted Gender is: {result}")
