@@ -3,7 +3,7 @@ from transformers import pipeline
 
 @st.cache_resource
 def load_qa_model():
-    return pipeline("question-answering", model="distilbert-base-uncased-distilled-squad")
+    return pipeline("question-answering", model="deepset/roberta-base-squad2")
 
 qa_pipeline = load_qa_model()
 
