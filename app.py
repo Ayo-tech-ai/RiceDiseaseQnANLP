@@ -8,113 +8,40 @@ def load_qa_model():
 qa_pipeline = load_qa_model()
 
 context = """
-Rice Diseases Knowledge Base
-Structured for NLP Question Answering (QA) Models
+Rice is affected by various diseases with significant impacts on yield. Bacterial Leaf Blight is caused by the bacterium Xanthomonas oryzae pv. oryzae. It presents symptoms like water-soaked lesions, yellowing, and wilting, and may lead to up to 70% yield loss. The disease spreads through rain, irrigation, and contaminated seeds or tools. Control involves growing resistant varieties such as IR20 and IR64, and applying copper sprays and crop rotation.
 
-Bacterial Leaf Blight
-Cause: Xanthomonas oryzae pv. oryzae
-Symptoms: Water-soaked lesions with yellowing, wilting, and wavy margins
-Impact: Up to 70% yield loss; affects milling quality
-Transmission: Rain splash, irrigation water, contaminated tools and seeds
-Management: Resistant varieties (IR20, IR64), copper-based sprays, crop rotation
+Bacterial Leaf Streak is another bacterial disease caused by Xanthomonas oryzae pv. oryzicola. It causes narrow, water-soaked streaks between leaf veins, resulting in 10–30% yield loss. The pathogen spreads via wind-driven rain and infected seeds. Management includes planting resistant varieties like IR24 and IR50, and spraying copper hydroxide.
 
-Bacterial Leaf Streak
-Cause: Xanthomonas oryzae pv. oryzicola
-Symptoms: Narrow water-soaked streaks between veins
-Impact: 10–30% yield loss; leads to chalky grains
-Transmission: Wind-driven rain, infected seeds
-Management: Resistant varieties (IR24, IR50), copper hydroxide sprays
+Bakanae Disease, also known as “Foolish Seedling,” is caused by the fungus Fusarium fujikuroi. It leads to tall, thin, fragile seedlings with hollow stems, resulting in 20–70% yield loss. The disease is transmitted through seeds and contaminated soil. Prevention includes hot water seed treatment and fungicide application with carbendazim.
 
-Bakanae Disease (Foolish Seedling)
-Cause: Fusarium fujikuroi (fungus)
-Symptoms: Tall, weak seedlings; hollow stems
-Impact: 20–70% yield loss; seedling death
-Transmission: Seedborne and contaminated soil
-Management: Hot water seed treatment, carbendazim fungicide
+Brown Spot, or Helminthosporiosis, is caused by Bipolaris oryzae and shows up as circular brown lesions with a bullseye pattern. It may cause 10–90% yield loss and is spread by windborne spores and poor soil fertility. Management includes applying potassium or silicon fertilizers and fungicides like mancozeb.
 
-Brown Spot
-Cause: Bipolaris oryzae
-Symptoms: Circular brown lesions resembling bullseyes on leaves/grains
-Impact: 10–90% yield loss; causes “dirty rice”
-Transmission: Windborne spores, poor soil fertility
-Management: Potassium/silicon fertilization, mancozeb fungicides
+Rice Grassy Stunt Virus (RGSV) is a viral disease spread by the brown planthopper. It results in stunted growth, pale leaves, and sterile tillers, with potential for 100% crop loss. Control strategies include using resistant varieties such as IR36 and IR56, and practicing synchronized planting.
 
-Rice Grassy Stunt Virus (RGSV)
-Cause: Viral disease transmitted by brown planthopper
-Symptoms: Stunted growth, pale leaves, sterile tillers
-Impact: Up to 100% yield loss in severe cases
-Transmission: Brown planthopper vector
-Management: Resistant varieties (IR36, IR56), synchronized planting
+Narrow Brown Spot, caused by the fungus Cercospora janseana, leads to thin brown streaks on leaves and yield losses between 5–40%. It spreads via windborne spores and potassium deficiency. Balanced fertilization and fungicides like propiconazole help manage the disease.
 
-Narrow Brown Spot
-Cause: Cercospora janseana
-Symptoms: Thin brown streaks on leaves
-Impact: 5–40% yield loss; accelerates leaf aging
-Transmission: Windborne spores; potassium deficiency
-Management: Balanced fertilization, propiconazole sprays
+Rice Ragged Stunt Virus (RRSV), also spread by brown planthoppers, causes ragged and twisted leaves, and stunting. It can cause 30–70% yield loss. Using resistant varieties like IR36 and IR72, along with Integrated Pest Management (IPM), can reduce its impact.
 
-Rice Ragged Stunt Virus (RRSV)
-Cause: Virus transmitted by brown planthopper
-Symptoms: Ragged/twisted leaves, stunted growth
-Impact: 30–70% yield loss
-Transmission: Persistent planthopper feeding
-Management: Resistant varieties (IR36, IR72), Integrated Pest Management (IPM)
+Rice Blast, caused by the fungus Magnaporthe oryzae, forms diamond-shaped lesions and can result in "rotten neck" symptoms. It may lead to total crop failure. Airborne spores and high humidity facilitate its spread. Management includes using resistant varieties and tricyclazole fungicide.
 
-Rice Blast
-Cause: Magnaporthe oryzae
-Symptoms: Diamond-shaped lesions, neck rot ("rotten neck")
-Impact: Up to 100% loss in severe cases
-Transmission: Airborne spores; favored by high humidity
-Management: Resistant varieties (IR64), tricyclazole fungicides
+Rice False Smut, caused by Ustilaginoidea virens, produces greenish-black spore balls that replace rice grains and reduce yield by 5–40%. It also poses a mycotoxin risk. It spreads during flowering via airborne spores and is managed by spraying propiconazole at the booting stage.
 
-Rice False Smut
-Cause: Ustilaginoidea virens
-Symptoms: Green-black spore balls in place of grains
-Impact: 5–40% yield loss; potential mycotoxin contamination
-Transmission: Airborne spores during flowering
-Management: Propiconazole during booting stage
+Sheath Blight is caused by Rhizoctonia solani and results in collar rot, sheath lesions, and lodging. Yield losses range from 20–70%. It spreads through soil-borne sclerotia and is managed by wider spacing and fungicides like validamycin.
 
-Sheath Blight
-Cause: Rhizoctonia solani
-Symptoms: Collar rot, lodging, lesions on sheath
-Impact: 20–70% yield loss
-Transmission: Soil-borne sclerotia; irrigation water
-Management: Wider plant spacing, validamycin sprays
+Sheath Rot, caused by Sarocladium oryzae, results in sheath rotting and shriveled grains, leading to 20–70% yield loss. It spreads via airborne spores and wounds. Treatment includes carbendazim and biological control with Trichoderma.
 
-Sheath Rot
-Cause: Sarocladium oryzae
-Symptoms: Rotting sheaths, poor grain fill
-Impact: 20–70% yield loss
-Transmission: Airborne spores, wounds
-Management: Carbendazim fungicides, Trichoderma biocontrol
+Stem Rot, caused by Sclerotium oryzae, is characterized by black sclerotia in the stem and can cause 30–80% yield loss. The disease spreads through sclerotia in the soil. Management strategies include applying silicon and rotating crops.
 
-Stem Rot
-Cause: Sclerotium oryzae
-Symptoms: Black sclerotia in stem, plant lodging
-Impact: 30–80% yield loss
-Transmission: Soilborne sclerotia
-Management: Silicon fertilization, crop rotation
+Rice Tungro Virus is a dual infection caused by Rice Tungro Bacilliform and Spherical Viruses. Spread by green leafhoppers, it causes yellow-orange leaves and stunting and can lead to total crop failure. Control methods include planting resistant varieties like IR36 and using neem-based repellents.
 
-Rice Tungro Virus
-Cause: Combination of RTBV + RTSV; spread by green leafhopper
-Symptoms: Yellow-orange leaf discoloration, stunted growth
-Impact: 50–100% yield loss
-Transmission: Leafhopper feeding
-Management: Resistant varieties (IR36), neem-based repellents
-
-General Rice Disease Management Strategies
-Prevention: Use resistant varieties, certified seeds, balanced fertilization
-Control: Remove diseased plants, apply copper and fungicide treatments
-Long-Term: Practice crop rotation, maintain soil health, adopt community-based pest control
+Effective management includes preventive measures like resistant varieties, certified seeds, balanced fertilization, removal of infected plants, targeted chemical applications, and long-term practices such as crop rotation and community-based pest control.
 """
 
 st.title("Rice Disease Q&A")
 
 question = st.text_input("Ask a question about rice diseases:")
+submit = st.button("Submit")
 
-if st.button("Submit"):
-    if question.strip() != "":
-        result = qa_pipeline(question=question, context=context)
-        st.write("Answer:", result['answer'])
-    else:
-        st.warning("Please enter a question before clicking Submit.")
+if submit and question:
+    result = qa_pipeline(question=question, context=context)
+    st.write("Answer:", result["answer"])
