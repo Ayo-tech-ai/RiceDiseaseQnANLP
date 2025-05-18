@@ -112,6 +112,9 @@ st.title("Rice Disease Q&A")
 
 question = st.text_input("Ask a question about rice diseases:")
 
-if question:
-    result = qa_pipeline(question=question, context=context)
-    st.write("Answer:", result['answer'])
+if st.button("Submit"):
+    if question.strip() != "":
+        result = qa_pipeline(question=question, context=context)
+        st.write("Answer:", result['answer'])
+    else:
+        st.warning("Please enter a question before clicking Submit.")
