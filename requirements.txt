@@ -2,3 +2,4 @@ streamlit
 transformers
 torch
 huggingface_hub
+requests
